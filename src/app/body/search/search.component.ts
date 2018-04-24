@@ -1,3 +1,4 @@
+import { WgSearchModel } from './../../share/wg-search.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -13,9 +14,12 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   type: string;
   paraSubs: Subscription;
-  result: { data: Array<any>, meta: {count: number}, status: String };
+  routerChangeSubs: Subscription;
+  resultPlayers: WgSearchModel;
+  resultClans: WgSearchModel;
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService) { }
+  constructor(private route: ActivatedRoute,
+              private searchService: SearchService) { }
 
   ngOnInit() {
     this.type = this.route.snapshot.params['type'];
@@ -24,7 +28,8 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.type = params['type'];
       }
     );
-    this.result = { data: [], meta: {count: 0}, status: '' };
+    this.resultPlayers = new WgSearchModel();
+    this.resultClans = new WgSearchModel();
   }
 
   ngOnDestroy() {
@@ -33,13 +38,14 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   onSearchClick(searchValue: string) {
     if (this.type === 'players') {
-      this.searchService.searchPlayer(searchValue).subscribe((data) => {
-        this.result = data;
+      this.searchService.searchPlayer(searchValue).subscribe((data: WgSearchModel) => {
+        this.resultPlayers = data;
       });
     } else if (this.type === 'clans') {
-      this.searchService.searchClan(searchValue).subscribe((data) => {
-        this.result = data;
+      this.searchService.searchClan(searchValue).subscribe((data: WgSearchModel) => {
+        this.resultClans = data;
       });
     }
   }
+
 }
