@@ -6,5 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: []
 })
 export class AppComponent {
-  title = 'app';
 }

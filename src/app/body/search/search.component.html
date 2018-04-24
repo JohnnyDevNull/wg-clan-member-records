@@ -1,1 +1,32 @@
-<p>search works. type: {{ type }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" #searchValue>
+                <button class="btn btn-primary" (click)="onSearchClick(searchValue.value)" >Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="result.data.length > 0 && type == 'clans'">
+        <div class="col">
+            <table class="table table-striped">
+                <tr *ngFor="let item of result.data">
+                    <td>{{ item.tag }}</td>
+                    <td>{{ item.name }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="result.data.length > 0 && type == 'players'">
+        <div class="col">
+            <table class="table table-striped">
+                <tr *ngFor="let item of result.data">
+                    <td>{{ item.account_id }}</td>
+                    <td>{{ item.nickname }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
