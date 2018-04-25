@@ -13,8 +13,7 @@ import { SearchService } from '../../share/search.service';
 export class SearchComponent implements OnInit, OnDestroy {
 
   type: string;
-  paraSubs: Subscription;
-  routerChangeSubs: Subscription;
+  subs: Subscription[] = [];
   resultPlayers: WgSearchModel;
   resultClans: WgSearchModel;
 
@@ -23,28 +22,34 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.type = this.route.snapshot.params['type'];
-    this.paraSubs = this.route.params.subscribe(
+    this.subs.push(this.route.params.subscribe(
       (params: Params) => {
         this.type = params['type'];
       }
-    );
+    ));
     this.resultPlayers = new WgSearchModel();
     this.resultClans = new WgSearchModel();
   }
 
   ngOnDestroy() {
-    this.paraSubs.unsubscribe();
+    for (let sub of this.subs) {
+      sub.unsubscribe();
+    }
   }
 
   onSearchClick(searchValue: string) {
     if (this.type === 'players') {
-      this.searchService.searchPlayer(searchValue).subscribe((data: WgSearchModel) => {
-        this.resultPlayers = data;
-      });
+      this.subs.push(this.searchService.searchPlayer(searchValue).subscribe(
+        (data: WgSearchModel) => {
+          this.resultPlayers = data;
+        }
+      ));
     } else if (this.type === 'clans') {
-      this.searchService.searchClan(searchValue).subscribe((data: WgSearchModel) => {
-        this.resultClans = data;
-      });
+      this.subs.push(this.searchService.searchClan(searchValue).subscribe(
+        (data: WgSearchModel) => {
+          this.resultClans = data;
+        }
+      ));
     }
   }
 
