@@ -1,3 +1,4 @@
+import { ConfigService } from './config.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -5,19 +6,22 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class SearchService {
 
-    private restBaseUrl: 'http://localhost/github/wg-clan-member-api/public/';
-    private lastPlayerName: String;
-    private lastClanName: String;
+  private apiBaseUrl: string;
+  private lastPlayerName: string;
+  private lastClanName: string;
 
-    constructor(private http: HttpClient) {}
+  constructor(private confService: ConfigService,
+              private http: HttpClient) {
+    this.apiBaseUrl = confService.getApiBaseUrl();
+  }
 
-    public searchPlayer(name: String): Observable<any> {
-        this.lastPlayerName = name;
-        return this.http.get('http://localhost/github/wg-clan-member-api/public/search/player/' + name);
-    }
+  public searchPlayer(name: string): Observable<any> {
+    this.lastPlayerName = name;
+    return this.http.get(this.apiBaseUrl + 'search/player/' + name);
+  }
 
-    public searchClan(name: String): Observable<any> {
-        this.lastClanName = name;
-        return this.http.get('http://localhost/github/wg-clan-member-api/public/search/clan/' + name);
-    }
+  public searchClan(name: string): Observable<any> {
+    this.lastClanName = name;
+    return this.http.get(this.apiBaseUrl + 'search/clan/' + name);
+  }
 }
