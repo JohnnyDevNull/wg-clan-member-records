@@ -1,10 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <p>playerId: {{ playerId }}</p>
+<div class="container" *ngIf="playerData">
+  <div id="playerHeader" class="row">
+    <div class="col border-bottom">
+      <h3>{{ playerData.nickname }}</h3>
     </div>
+  </div>
+  <div id="playerMeta" class="row">
     <div class="col">
-      <p>playerData: toDo</p>
+      <small class="text-muted">
+        Account-ID: {{ playerId }}, 
+        erstellt am: {{ playerData.created_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}, 
+        zuletzt aktualisiert: {{ playerData.updated_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}
+      </small>
+    </div>
+  </div>
+  <div id="playerStats" class="row">
+    <div class="col">
+      <h4>Siegraten</h4>
+      <table class="table">
+        <tr><th>PVE:</th><td>{{ ((playerData.statistics.pve.wins / playerData.statistics.pve.battles) * 100) | number }}</td></tr>
+        <tr><th>PVP:</th><td>{{ ((playerData.statistics.pvp.wins / playerData.statistics.pvp.battles) * 100) | number }}</td></tr>
+      </table>
     </div>
   </div>
 </div>

@@ -3,8 +3,15 @@
     <div class="row">
         <div class="col">
             <form class="form-inline" style="margin-bottom: 10px">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" #searchValue>
-                <button class="btn btn-primary" (click)="onSearchClick(searchValue.value)" >Search</button>
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="{{ type === 'players' ? 'Spieler' : 'Clans' }}"
+                  #searchValue>
+                <button class="btn btn-primary"
+                  (click)="onSearchClick(searchValue.value)">
+                  Search
+                </button>
             </form>
         </div>
     </div>
@@ -62,7 +69,7 @@
                         <td>{{ item.account_id }}</td>
                         <td>{{ item.nickname }}</td>
                         <td>
-                            <a style="cursor: pointer">
+                            <a style="cursor: pointer" [routerLink]="['/', 'player', item.account_id]">
                                 <i class="fa fa-search"></i>
                             </a>
                         </td>

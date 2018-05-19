@@ -1,3 +1,4 @@
+import { Player } from './player.model';
 import { PlayerService } from './../../share/player.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { WgBaseResultModel } from './../../share/wg-base-result.model';
@@ -14,7 +15,8 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
 
   private subs: Subscription[] = [];
   public playerId: number;
-  public playerData: WgBaseResultModel;
+  public resultData: WgBaseResultModel;
+  public playerData: Player;
 
   constructor(private route: ActivatedRoute,
               private playerService: PlayerService) { }
@@ -30,8 +32,9 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
     if (this.playerId) {
       this.subs.push(this.playerService.getPlayerInfo(this.playerId).subscribe(
         (data: WgBaseResultModel) => {
-          this.playerData = data;
-          console.log(data);
+          this.resultData = data;
+          this.playerData = <Player>this.resultData.data[this.playerId];
+          console.log(this.playerData);
         }
       ));
     }

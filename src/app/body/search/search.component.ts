@@ -48,7 +48,6 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.subs.push(this.searchService.searchClan(searchValue).subscribe(
         (data: WgBaseResultModel) => {
           this.resultClans = data;
-          console.log(data);
         }
       ));
     }
