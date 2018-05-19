@@ -21,10 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles/bootstrap-solar.min.css",
-              "src/styles/main.css"
+              "src/scss/main.scss"
             ],
             "scripts": []
           },
@@ -129,7 +126,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
