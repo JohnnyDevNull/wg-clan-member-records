@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { ConfigService } from './share/config.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,15 +15,6 @@ import { PlayerDetailComponent } from './body/player-detail/player-detail.compon
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { ClanRanksComponent } from './body/clan-ranks/clan-ranks.component';
 import { LandingPageComponent } from './body/landing-page/landing-page.component';
-
-const appRoutes: Routes = [
-  { path: '', component: LandingPageComponent },
-  { path: 'search/:type', component: SearchComponent },
-  { path: 'player/:id', component: PlayerDetailComponent },
-  { path: 'clan/:id', component: ClanDetailComponent },
-  { path: 'clan/:id/member/:id', component: MemberDetailComponent },
-  { path: 'clan/:id/ranks', component: ClanRanksComponent },
-];
 
 @NgModule({
   declarations: [
@@ -41,7 +33,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]
