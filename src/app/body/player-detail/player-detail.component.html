@@ -15,10 +15,33 @@
   </div>
   <div id="playerStats" class="row">
     <div class="col">
-      <h4>Siegraten</h4>
+      <h4>Siegrate</h4>
       <table class="table">
         <tr><th>PVE:</th><td>{{ ((playerData.statistics.pve.wins / playerData.statistics.pve.battles) * 100) | number }}</td></tr>
         <tr><th>PVP:</th><td>{{ ((playerData.statistics.pvp.wins / playerData.statistics.pvp.battles) * 100) | number }}</td></tr>
+        <tr><th>PVP Div2:</th><td>{{ ((playerData.statistics.pvp_div2.wins / playerData.statistics.pvp_div2.battles) * 100) | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ ((playerData.statistics.pvp_div3.wins / playerData.statistics.pvp_div3.battles) * 100) | number }}</td></tr>
+        <tr><th>PVP Solo:</th><td>{{ ((playerData.statistics.pvp_solo.wins / playerData.statistics.pvp_solo.battles) * 100) | number }}</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <h4>Schaden Durschn.</h4>
+      <table class="table">
+        <tr><th>PVE:</th><td>{{ ((playerData.statistics.pve.damage_dealt / playerData.statistics.pve.battles)) | number }}</td></tr>
+        <tr><th>PVP:</th><td>{{ ((playerData.statistics.pvp.damage_dealt / playerData.statistics.pvp.battles)) | number }}</td></tr>
+        <tr><th>PVP Div2:</th><td>{{ ((playerData.statistics.pvp_div2.damage_dealt / playerData.statistics.pvp_div2.battles)) | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ ((playerData.statistics.pvp_div3.damage_dealt / playerData.statistics.pvp_div3.battles)) | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ ((playerData.statistics.pvp_solo.damage_dealt / playerData.statistics.pvp_solo.battles)) | number }}</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <h4>Schaden Max.</h4>
+      <table class="table">
+        <tr><th>PVE:</th><td>{{ (playerData.statistics.pve.max_damage_dealt) | number }}</td></tr>
+        <tr><th>PVP:</th><td>{{ (playerData.statistics.pvp.max_damage_dealt) | number }}</td></tr>
+        <tr><th>PVP Div2:</th><td>{{ (playerData.statistics.pvp_div2.max_damage_dealt) | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ (playerData.statistics.pvp_div3.max_damage_dealt) | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ (playerData.statistics.pvp_solo.max_damage_dealt) | number }}</td></tr>
       </table>
     </div>
   </div>
