@@ -17,11 +17,11 @@
     <div class="col">
       <h4>Siegrate</h4>
       <table class="table">
-        <tr><th>PVE:</th><td>{{ ((playerData.statistics.pve.wins / playerData.statistics.pve.battles) * 100) | number }}</td></tr>
-        <tr><th>PVP:</th><td>{{ ((playerData.statistics.pvp.wins / playerData.statistics.pvp.battles) * 100) | number }}</td></tr>
-        <tr><th>PVP Div2:</th><td>{{ ((playerData.statistics.pvp_div2.wins / playerData.statistics.pvp_div2.battles) * 100) | number }}</td></tr>
-        <tr><th>PVP Div3:</th><td>{{ ((playerData.statistics.pvp_div3.wins / playerData.statistics.pvp_div3.battles) * 100) | number }}</td></tr>
-        <tr><th>PVP Solo:</th><td>{{ ((playerData.statistics.pvp_solo.wins / playerData.statistics.pvp_solo.battles) * 100) | number }}</td></tr>
+        <tr><th>PVE:</th><td>{{ getWinRate('pve') | number }}</td></tr>
+        <tr><th>PVP:</th><td>{{ getWinRate('pvp') | number }}</td></tr>
+        <tr><th>PVP Div2:</th><td>{{ getWinRate('pvp_div2') | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ getWinRate('pvp_div3') | number }}</td></tr>
+        <tr><th>PVP Solo:</th><td>{{ getWinRate('pvp_solo') | number }}</td></tr>
       </table>
     </div>
     <div class="col">

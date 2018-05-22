@@ -1,3 +1,4 @@
+import { PlayerDetailService } from './player-detail.service';
 import { Player } from './player.model';
 import { PlayerService } from './../../share/player.service';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-player-detail',
   templateUrl: './player-detail.component.html',
   styleUrls: [],
-  providers: [PlayerService]
+  providers: [PlayerService, PlayerDetailService]
 })
 export class PlayerDetailComponent implements OnInit, OnDestroy {
 
@@ -19,7 +20,8 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
   public playerData: Player;
 
   constructor(private route: ActivatedRoute,
-              private playerService: PlayerService) { }
+              private playerService: PlayerService,
+              private detailService: PlayerDetailService) { }
 
   ngOnInit() {
     this.playerId = this.route.snapshot.params['id'];
@@ -34,6 +36,7 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
         (data: WgBaseResultModel) => {
           this.resultData = data;
           this.playerData = <Player>this.resultData.data[this.playerId];
+          this.detailService.setPlayerData(this.playerData);
           console.log(this.playerData);
         }
       ));
@@ -46,4 +49,7 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
     }
   }
 
+  getWinRate(type: string) {
+    return this.detailService.getWinRate(type);
+  }
 }
