@@ -15,6 +15,8 @@ import { PlayerDetailComponent } from './body/player-detail/player-detail.compon
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { ClanRanksComponent } from './body/clan-ranks/clan-ranks.component';
 import { LandingPageComponent } from './body/landing-page/landing-page.component';
+import { ClansListComponent } from './body/search/clans-list/clans-list.component';
+import { PlayersListComponent } from './body/search/players-list/players-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { LandingPageComponent } from './body/landing-page/landing-page.component
     ClanDetailComponent,
     ClanRanksComponent,
     LandingPageComponent,
-    SearchComponent
+    SearchComponent,
+    ClansListComponent,
+    PlayersListComponent,
   ],
   imports: [
     BrowserModule,

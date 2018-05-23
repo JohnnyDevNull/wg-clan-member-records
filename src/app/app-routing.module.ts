@@ -1,3 +1,5 @@
+import { ClansListComponent } from './body/search/clans-list/clans-list.component';
+import { PlayersListComponent } from './body/search/players-list/players-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +12,10 @@ import { LandingPageComponent } from './body/landing-page/landing-page.component
 
 const appRoutes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
-  { path: 'search/:type', component: SearchComponent },
+  { path: 'search', component: SearchComponent, children: [
+    { path: 'clans', component: ClansListComponent, data: { type: 'clans' } },
+    { path: 'players', component: PlayersListComponent, data: { type: 'players' } }
+  ]},
   { path: 'player/:id', component: PlayerDetailComponent },
   { path: 'clan/:id', component: ClanDetailComponent },
   { path: 'clan/:id/member/:id', component: MemberDetailComponent },

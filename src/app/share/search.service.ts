@@ -1,10 +1,13 @@
 import { ConfigService } from './config.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable()
 export class SearchService {
+
+  public searchPlayerPattern = new Subject();
+  public searchClanPattern = new Subject();
 
   private apiBaseUrl: string;
   private lastPlayerName: string;
