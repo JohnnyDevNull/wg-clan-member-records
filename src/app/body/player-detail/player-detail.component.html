@@ -22,6 +22,8 @@
         <tr><th>PVP Div2:</th><td>{{ getWinRate('pvp_div2') | number }}</td></tr>
         <tr><th>PVP Div3:</th><td>{{ getWinRate('pvp_div3') | number }}</td></tr>
         <tr><th>PVP Solo:</th><td>{{ getWinRate('pvp_solo') | number }}</td></tr>
+        <tr><th>Rank Solo:</th><td>{{ getWinRate('rank_solo') | number }}</td></tr>
+        <tr><th>Club:</th><td>{{ getWinRate('club') | number }}</td></tr>
       </table>
     </div>
     <div class="col">
@@ -32,6 +34,8 @@
         <tr><th>PVP Div2:</th><td>{{ getDamageAvg('pvp_div2') | number }}</td></tr>
         <tr><th>PVP Div3:</th><td>{{ getDamageAvg('pvp_div3') | number }}</td></tr>
         <tr><th>PVP Solo:</th><td>{{ getDamageAvg('pvp_solo') | number }}</td></tr>
+        <tr><th>Rank Solo:</th><td>{{ getDamageAvg('rank_solo') | number }}</td></tr>
+        <tr><th>Club:</th><td>{{ getDamageAvg('club') | number }}</td></tr>
       </table>
     </div>
     <div class="col">
@@ -42,6 +46,8 @@
         <tr><th>PVP Div2:</th><td>{{ (playerData.statistics.pvp_div2.max_damage_dealt) | number }}</td></tr>
         <tr><th>PVP Div3:</th><td>{{ (playerData.statistics.pvp_div3.max_damage_dealt) | number }}</td></tr>
         <tr><th>PVP Solo:</th><td>{{ (playerData.statistics.pvp_solo.max_damage_dealt) | number }}</td></tr>
+        <tr><th>Rank Solo:</th><td>{{ (playerData.statistics.rank_solo.max_damage_dealt) | number }}</td></tr>
+        <tr><th>Club:</th><td>{{ (playerData.statistics.club.max_damage_dealt) | number }}</td></tr>
       </table>
     </div>
   </div>

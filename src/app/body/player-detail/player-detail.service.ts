@@ -18,6 +18,10 @@ export class PlayerDetailService {
         return (this.playerData.statistics.pvp_div3.wins / this.playerData.statistics.pvp_div3.battles) * 100;
       case 'pvp_solo':
         return (this.playerData.statistics.pvp_solo.wins / this.playerData.statistics.pvp_solo.battles) * 100;
+      case 'rank_solo':
+        return (this.playerData.statistics.rank_solo.wins / this.playerData.statistics.rank_solo.battles) * 100;
+      case 'club':
+        return (this.playerData.statistics.club.wins / this.playerData.statistics.club.battles) * 100;
     }
   }
 
@@ -33,6 +37,10 @@ export class PlayerDetailService {
         return (this.playerData.statistics.pvp_div3.damage_dealt / this.playerData.statistics.pvp_div3.battles);
       case 'pvp_solo':
         return (this.playerData.statistics.pvp_solo.damage_dealt / this.playerData.statistics.pvp_solo.battles);
+      case 'rank_solo':
+        return (this.playerData.statistics.rank_solo.damage_dealt / this.playerData.statistics.rank_solo.battles);
+      case 'club':
+        return (this.playerData.statistics.club.damage_dealt / this.playerData.statistics.club.battles);
     }
   }
 }
