@@ -52,4 +52,8 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
   getWinRate(type: string) {
     return this.detailService.getWinRate(type);
   }
+
+  getDamageAvg(type: string) {
+    return this.detailService.getDamageAvg(type);
+  }
 }

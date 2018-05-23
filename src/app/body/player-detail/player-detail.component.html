@@ -27,11 +27,11 @@
     <div class="col">
       <h4>Schaden Durschn.</h4>
       <table class="table">
-        <tr><th>PVE:</th><td>{{ ((playerData.statistics.pve.damage_dealt / playerData.statistics.pve.battles)) | number }}</td></tr>
-        <tr><th>PVP:</th><td>{{ ((playerData.statistics.pvp.damage_dealt / playerData.statistics.pvp.battles)) | number }}</td></tr>
-        <tr><th>PVP Div2:</th><td>{{ ((playerData.statistics.pvp_div2.damage_dealt / playerData.statistics.pvp_div2.battles)) | number }}</td></tr>
-        <tr><th>PVP Div3:</th><td>{{ ((playerData.statistics.pvp_div3.damage_dealt / playerData.statistics.pvp_div3.battles)) | number }}</td></tr>
-        <tr><th>PVP Solo:</th><td>{{ ((playerData.statistics.pvp_solo.damage_dealt / playerData.statistics.pvp_solo.battles)) | number }}</td></tr>
+        <tr><th>PVE:</th><td>{{ getDamageAvg('pve') | number }}</td></tr>
+        <tr><th>PVP:</th><td>{{ getDamageAvg('pvp') | number }}</td></tr>
+        <tr><th>PVP Div2:</th><td>{{ getDamageAvg('pvp_div2') | number }}</td></tr>
+        <tr><th>PVP Div3:</th><td>{{ getDamageAvg('pvp_div3') | number }}</td></tr>
+        <tr><th>PVP Solo:</th><td>{{ getDamageAvg('pvp_solo') | number }}</td></tr>
       </table>
     </div>
     <div class="col">
