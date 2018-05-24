@@ -1,1 +1,37 @@
-<p>clanId: {{ clanId }}</p>
+<div class="container" *ngIf="clanData">
+  <div class="row">
+    <div class="col border-bottom">
+      <h3>[{{ clanData.tag }}] {{ clanData.name }}</h3>
+    </div>
+  </div>
+  <div id="clanMeta" class="row">
+    <div class="col">
+      <small class="text-muted">
+        Clan-ID: {{ clanId }}, 
+        erstellt am: {{ clanData.created_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}, 
+        zuletzt aktualisiert: {{ clanData.updated_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}
+      </small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" id="clanDescr2" *ngIf="clanData.description">
+      {{ clanData.description }}
+    </div>
+    <div class="col" id="members" *ngIf="clanData.members">
+      <table class="table">
+        <tr>
+          <td>Account-ID</td>
+          <td>Name</td>
+          <td>Rolle</td>
+          <td>Beitritt</td>
+        </tr>
+        <tr *ngFor="let member of clanData.members">
+          <td>{{member.account_id}}</td>
+          <td>{{member.account_name}}</td>
+          <td>{{member.role}}</td>
+          <td>{{member.joined_at * 1000 | date:'dd.MM.yyyy hh:mm:ss'}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
