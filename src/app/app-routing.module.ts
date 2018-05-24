@@ -8,10 +8,9 @@ import { MemberDetailComponent } from './body/member-detail/member-detail.compon
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { PlayerDetailComponent } from './body/player-detail/player-detail.component';
 import { SearchComponent } from './body/search/search.component';
-import { LandingPageComponent } from './body/landing-page/landing-page.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LandingPageComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'search' , pathMatch: 'full' },
   { path: 'search', component: SearchComponent, children: [
     { path: 'clans', component: ClansListComponent, data: { type: 'clans' } },
     { path: 'players', component: PlayersListComponent, data: { type: 'players' } }

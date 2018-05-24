@@ -14,7 +14,6 @@ import { MemberDetailComponent } from './body/member-detail/member-detail.compon
 import { PlayerDetailComponent } from './body/player-detail/player-detail.component';
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { ClanRanksComponent } from './body/clan-ranks/clan-ranks.component';
-import { LandingPageComponent } from './body/landing-page/landing-page.component';
 import { ClansListComponent } from './body/search/clans-list/clans-list.component';
 import { PlayersListComponent } from './body/search/players-list/players-list.component';
 
@@ -28,7 +27,6 @@ import { PlayersListComponent } from './body/search/players-list/players-list.co
     PlayerDetailComponent,
     ClanDetailComponent,
     ClanRanksComponent,
-    LandingPageComponent,
     SearchComponent,
     ClansListComponent,
     PlayersListComponent,
