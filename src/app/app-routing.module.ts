@@ -10,7 +10,7 @@ import { PlayerDetailComponent } from './body/player-detail/player-detail.compon
 import { SearchComponent } from './body/search/search.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'search' , pathMatch: 'full' },
+  { path: '', redirectTo: 'search/players' , pathMatch: 'full' },
   { path: 'search', component: SearchComponent, children: [
     { path: 'clans', component: ClansListComponent, data: { type: 'clans' } },
     { path: 'players', component: PlayersListComponent, data: { type: 'players' } }
