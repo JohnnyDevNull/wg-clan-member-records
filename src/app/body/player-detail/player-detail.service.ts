@@ -7,40 +7,16 @@ export class PlayerDetailService {
   }
 
   public getWinRate(type: string) {
-    switch (type) {
-      case 'pve':
-        return (this.playerData.statistics.pve.wins / this.playerData.statistics.pve.battles) * 100;
-      case 'pvp':
-        return (this.playerData.statistics.pvp.wins / this.playerData.statistics.pvp.battles) * 100;
-      case 'pvp_div2':
-        return (this.playerData.statistics.pvp_div2.wins / this.playerData.statistics.pvp_div2.battles) * 100;
-      case 'pvp_div3':
-        return (this.playerData.statistics.pvp_div3.wins / this.playerData.statistics.pvp_div3.battles) * 100;
-      case 'pvp_solo':
-        return (this.playerData.statistics.pvp_solo.wins / this.playerData.statistics.pvp_solo.battles) * 100;
-      case 'rank_solo':
-        return (this.playerData.statistics.rank_solo.wins / this.playerData.statistics.rank_solo.battles) * 100;
-      case 'club':
-        return (this.playerData.statistics.club.wins / this.playerData.statistics.club.battles) * 100;
+    if (this.playerData.statistics[type].battles === 0) {
+      return 0;
     }
+    return ((this.playerData.statistics[type].wins / this.playerData.statistics[type].battles) * 100);
   }
 
   public getDamageAvg(type: string) {
-    switch (type) {
-      case 'pve':
-        return (this.playerData.statistics.pve.damage_dealt / this.playerData.statistics.pve.battles);
-      case 'pvp':
-        return (this.playerData.statistics.pvp.damage_dealt / this.playerData.statistics.pvp.battles);
-      case 'pvp_div2':
-        return (this.playerData.statistics.pvp_div2.damage_dealt / this.playerData.statistics.pvp_div2.battles);
-      case 'pvp_div3':
-        return (this.playerData.statistics.pvp_div3.damage_dealt / this.playerData.statistics.pvp_div3.battles);
-      case 'pvp_solo':
-        return (this.playerData.statistics.pvp_solo.damage_dealt / this.playerData.statistics.pvp_solo.battles);
-      case 'rank_solo':
-        return (this.playerData.statistics.rank_solo.damage_dealt / this.playerData.statistics.rank_solo.battles);
-      case 'club':
-        return (this.playerData.statistics.club.damage_dealt / this.playerData.statistics.club.battles);
+    if (this.playerData.statistics[type].battles === 0) {
+      return 0;
     }
+    return this.playerData.statistics[type].damage_dealt / this.playerData.statistics[type].battles;
   }
 }
