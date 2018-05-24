@@ -21,7 +21,7 @@
                   <td>{{ item.tag }}</td>
                   <td>{{ item.name }}</td>
                   <td>
-                      <a style="cursor: pointer">
+                      <a [routerLink]="['/', 'clan', item.clan_id]">
                           <i class="fa fa-search"></i>
                       </a>
                   </td>
