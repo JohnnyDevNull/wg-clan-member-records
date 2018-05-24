@@ -20,10 +20,10 @@
     <div class="col" id="members" *ngIf="clanData.members">
       <table class="table">
         <tr>
-          <td>Account-ID</td>
-          <td>Name</td>
-          <td>Rolle</td>
-          <td>Beitritt</td>
+          <th>Account-ID</th>
+          <th>Name</th>
+          <th>Rolle</th>
+          <th>Beitritt</th>
         </tr>
         <tr *ngFor="let member of clanData.members">
           <td>{{member.account_id}}</td>
