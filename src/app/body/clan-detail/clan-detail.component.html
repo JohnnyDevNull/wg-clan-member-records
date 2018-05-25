@@ -24,12 +24,18 @@
           <th>Name</th>
           <th>Rolle</th>
           <th>Beitritt</th>
+          <th>#</th>
         </tr>
         <tr *ngFor="let member of clanData.members">
           <td>{{member.account_id}}</td>
           <td>{{member.account_name}}</td>
           <td>{{member.role}}</td>
           <td>{{member.joined_at * 1000 | date:'dd.MM.yyyy hh:mm:ss'}}</td>
+          <td>
+            <a [routerLink]="['/player/', member.account_id]">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+          </td>
         </tr>
       </table>
     </div>
