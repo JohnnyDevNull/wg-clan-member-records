@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   public type: string;
   public resultPlayers: WgBaseResultModel;
   public resultClans: WgBaseResultModel;
+  public lastSearchValue = '';
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -23,7 +24,15 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subs.push(this.route.url.subscribe(() => {
-     this.type = this.route.snapshot.firstChild.data['type'];
+      this.type = this.route.snapshot.firstChild.data['type'];
+
+      let serviceValue = '';
+      if (this.type === 'players') {
+        serviceValue = this.searchService.getLastPlayerName();
+      } else if (this.type === 'clans') {
+        serviceValue = this.searchService.getLastClanName();
+      }
+      this.lastSearchValue = serviceValue;
     }));
 
     this.resultPlayers = new WgBaseResultModel();

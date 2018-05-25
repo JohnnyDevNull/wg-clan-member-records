@@ -9,9 +9,9 @@ export class SearchService {
   public searchPlayerPattern = new Subject();
   public searchClanPattern = new Subject();
 
-  private apiBaseUrl: string;
-  private lastPlayerName: string;
-  private lastClanName: string;
+  private apiBaseUrl = '';
+  private lastPlayerName = '';
+  private lastClanName = '';
 
   constructor(private confService: ConfigService,
               private http: HttpClient) {
@@ -26,5 +26,13 @@ export class SearchService {
   public searchClan(name: string): Observable<any> {
     this.lastClanName = name;
     return this.http.get(this.apiBaseUrl + 'search/clan/' + name);
+  }
+
+  public getLastPlayerName() {
+    return this.lastPlayerName;
+  }
+
+  public getLastClanName() {
+    return this.lastClanName;
   }
 }

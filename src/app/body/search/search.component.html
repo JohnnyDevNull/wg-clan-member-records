@@ -7,6 +7,7 @@
           class="form-control mr-sm-2"
           type="search"
           placeholder="{{ type === 'players' ? 'Spieler' : 'Clans' }}"
+          [value]="lastSearchValue"
           #searchValue>
         <button class="btn btn-primary"
           (click)="onSearchClick(searchValue.value)">
