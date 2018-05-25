@@ -1,5 +1,3 @@
-import { AppRoutingModule } from './app-routing.module';
-import { ConfigService } from './share/config.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +14,9 @@ import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { ClanRanksComponent } from './body/clan-ranks/clan-ranks.component';
 import { ClansListComponent } from './body/search/clans-list/clans-list.component';
 import { PlayersListComponent } from './body/search/players-list/players-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SearchService } from './share/search.service';
+import { ConfigService } from './share/config.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { PlayersListComponent } from './body/search/players-list/players-list.co
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ConfigService],
+  providers: [ConfigService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

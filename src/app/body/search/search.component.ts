@@ -8,7 +8,6 @@ import { SearchService } from '../../share/search.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  providers: [ SearchService ]
 })
 export class SearchComponent implements OnInit, OnDestroy {
 
@@ -23,16 +22,12 @@ export class SearchComponent implements OnInit, OnDestroy {
               private searchService: SearchService) { }
 
   ngOnInit() {
+    this.type = this.route.snapshot.firstChild.data['type'];
+    this.loadLastSearchValue();
+
     this.subs.push(this.route.url.subscribe(() => {
       this.type = this.route.snapshot.firstChild.data['type'];
-
-      let serviceValue = '';
-      if (this.type === 'players') {
-        serviceValue = this.searchService.getLastPlayerName();
-      } else if (this.type === 'clans') {
-        serviceValue = this.searchService.getLastClanName();
-      }
-      this.lastSearchValue = serviceValue;
+      this.loadLastSearchValue();
     }));
 
     this.resultPlayers = new WgBaseResultModel();
@@ -53,4 +48,13 @@ export class SearchComponent implements OnInit, OnDestroy {
     }
   }
 
+  private loadLastSearchValue() {
+    let serviceValue = '';
+    if (this.type === 'players') {
+      serviceValue = this.searchService.getLastPlayerName();
+    } else if (this.type === 'clans') {
+      serviceValue = this.searchService.getLastClanName();
+    }
+    this.lastSearchValue = serviceValue;
+  }
 }

@@ -6,8 +6,9 @@
         <input
           class="form-control mr-sm-2"
           type="search"
+          name="search"
           placeholder="{{ type === 'players' ? 'Spieler' : 'Clans' }}"
-          [value]="lastSearchValue"
+          [(ngModel)]="lastSearchValue"
           #searchValue>
         <button class="btn btn-primary"
           (click)="onSearchClick(searchValue.value)">

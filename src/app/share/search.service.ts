@@ -1,3 +1,4 @@
+import { WgBaseResultModel } from './wg-base-result.model';
 import { ConfigService } from './config.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +12,9 @@ export class SearchService {
 
   private apiBaseUrl = '';
   private lastPlayerName = '';
+  private lastPlayerResult: WgBaseResultModel = null;
   private lastClanName = '';
+  private lastClanResult: WgBaseResultModel = null;
 
   constructor(private confService: ConfigService,
               private http: HttpClient) {
@@ -28,11 +31,27 @@ export class SearchService {
     return this.http.get(this.apiBaseUrl + 'search/clan/' + name);
   }
 
-  public getLastPlayerName() {
+  public getLastPlayerName(): string {
     return this.lastPlayerName;
   }
 
-  public getLastClanName() {
+  public getLastClanName(): string {
     return this.lastClanName;
+  }
+
+  public getLastPlayerResult(): WgBaseResultModel {
+    return this.lastPlayerResult;
+  }
+
+  public getLastClanResult(): WgBaseResultModel {
+    return this.lastClanResult;
+  }
+
+  public setLastPlayerResult(lastResult: WgBaseResultModel) {
+    this.lastPlayerResult = lastResult;
+  }
+
+  public setLastClanResult(lastResult: WgBaseResultModel) {
+    this.lastClanResult = lastResult;
   }
 }

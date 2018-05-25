@@ -17,11 +17,13 @@ export class ClansListComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
+    this.clanList = this.searchService.getLastClanResult();
     this.scpSub = this.searchService.searchClanPattern.subscribe(
       (data: string) => {
         this.searchService.searchClan(data).subscribe(
           (result: WgBaseResultModel) => {
             this.clanList = result;
+            this.searchService.setLastClanResult(result);
           }
         );
       }

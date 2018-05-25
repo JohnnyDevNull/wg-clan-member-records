@@ -17,11 +17,13 @@ export class PlayersListComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
+    this.playersList = this.searchService.getLastPlayerResult();
     this.sppSub = this.searchService.searchPlayerPattern.subscribe(
       (data: string) => {
         this.searchService.searchPlayer(data).subscribe(
           (result: WgBaseResultModel) => {
             this.playersList = result;
+            this.searchService.setLastPlayerResult(result);
           }
         );
       }
