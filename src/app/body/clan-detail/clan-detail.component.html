@@ -1,9 +1,11 @@
 <div class="container" *ngIf="clanData">
+
   <div class="row">
     <div class="col border-bottom">
       <h3>[{{ clanData.tag }}] {{ clanData.name }}</h3>
     </div>
   </div>
+ 
   <div id="clanMeta" class="row">
     <div class="col">
       <small class="text-muted">
@@ -13,6 +15,24 @@
       </small>
     </div>
   </div>
+
+  <div id="clanTabNav" class="row">
+    <div class="col">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLinkActive="active"
+             [routerLink]="['/clan', clanId]">Memberlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLinkActive="active"
+             [routerLink]="['/clan', clanId, 'ranks']">Memberranks</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col" id="clanDescr2" *ngIf="clanData.description">
       {{ clanData.description }}
@@ -40,4 +60,5 @@
       </table>
     </div>
   </div>
+
 </div>

@@ -3,8 +3,8 @@ import { PlayersListComponent } from './body/search/players-list/players-list.co
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { ClanRanksComponent } from './body/clan-ranks/clan-ranks.component';
-import { MemberDetailComponent } from './body/member-detail/member-detail.component';
+import { ClanRanksComponent } from './body/clan-detail/clan-ranks/clan-ranks.component';
+import { MemberDetailComponent } from './body/clan-detail/member-detail/member-detail.component';
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
 import { PlayerDetailComponent } from './body/player-detail/player-detail.component';
 import { SearchComponent } from './body/search/search.component';
