@@ -1,4 +1,5 @@
 import { Player } from './player.model';
+
 export class PlayerDetailService {
   private playerData: Player;
 
@@ -10,7 +11,7 @@ export class PlayerDetailService {
     if (this.playerData.statistics[type].battles === 0) {
       return 0;
     }
-    return ((this.playerData.statistics[type].wins / this.playerData.statistics[type].battles) * 100);
+    return (this.playerData.statistics[type].wins / this.playerData.statistics[type].battles) * 100;
   }
 
   public getDamageAvg(type: string) {

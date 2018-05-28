@@ -41,14 +41,14 @@
       <tr *ngFor="let memberStat of memberStats.member_stats; let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{getMemberInfo(memberStat.account_id).account_name}}</td>
-        <td class="text-right">{{ (memberStat.battles).toLocaleString() }}</td>
-        <td class="text-right">{{getFieldValue('pvp', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('pvp_solo', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('pvp_div2', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('pvp_div3', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('pve', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('club', memberStat)}}</td>
-        <td class="text-right">{{getFieldValue('rank_solo', memberStat)}}</td>
+        <td class="text-right">{{ memberStat.battles | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('pvp', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('pvp_solo', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('pvp_div2', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('pvp_div3', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('pve', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('club', memberStat) | number:'0.0-2' }}</td>
+        <td class="text-right">{{ getFieldValue('rank_solo', memberStat) | number:'0.0-2' }}</td>
         <td>
           <a [routerLink]="['/player/', memberStat.account_id]">
             <i class="fa fa-search" aria-hidden="true"></i>

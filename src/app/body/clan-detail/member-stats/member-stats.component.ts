@@ -1,4 +1,3 @@
-import { HelperService } from './../../../share/helper.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ClanModel } from '../clan.model';
@@ -24,8 +23,7 @@ export class MemberStatsComponent implements OnInit {
   public memberStats: MemberStats;
   private subs: Subscription;
 
-  constructor(private clanService: ClanService,
-              private helper: HelperService) { }
+  constructor(private clanService: ClanService) { }
 
   ngOnInit() {
     this.clanData = this.clanService.getClanData();
@@ -50,16 +48,15 @@ export class MemberStatsComponent implements OnInit {
   getFieldValue(type: string, memberStat: MemberStat) {
     switch (+this.battleType) {
       case BATTLES:
-        return (+memberStat[type].battles).toLocaleString();
+        return memberStat[type].battles;
       case MAXDMG:
-        return (+memberStat[type].max_damage_dealt).toLocaleString();
+        return memberStat[type].max_damage_dealt;
       case WINRATE:
-        const winrate = ((memberStat[type].wins / memberStat[type].battles) * 100);
-        return this.helper.roundNumberPrecision(winrate, 2);
+        return (memberStat[type].wins / memberStat[type].battles) * 100;
       case KILLS:
-        return (<number>memberStat[type].frags).toLocaleString();
+        return memberStat[type].frags;
       case PLANES:
-        return (<number>memberStat[type].planes_killed).toLocaleString();
+        return memberStat[type].planes_killed;
       default:
         return 0;
     }

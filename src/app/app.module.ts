@@ -1,6 +1,5 @@
-import { HelperService } from './share/helper.service';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +18,10 @@ import { HeaderComponent } from './header/header.component';
 import { ConfigService } from './share/config.service';
 import { SearchService } from './share/search.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
+registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
   declarations: [
@@ -42,7 +45,7 @@ import { SearchService } from './share/search.service';
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [ConfigService, SearchService, HelperService],
+  providers: [ConfigService, SearchService, { provide: LOCALE_ID, useValue: 'de-DE' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
