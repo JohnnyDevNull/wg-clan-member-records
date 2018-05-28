@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col">
+    <div class="btn-group btn-group-toggle nav-battle-types"
+         ngbRadioGroup
+         name="radioBasic"
+         [(ngModel)]="battleType">
+      <label ngbButtonLabel class="btn-secondary btn">
+        <input ngbButton type="radio" [value]="1"> Battles
+      </label>
+      <label ngbButtonLabel class="btn-secondary btn">
+        <input ngbButton type="radio" [value]="2"> Max Damage
+      </label>
+      <label ngbButtonLabel class="btn-secondary btn">
+        <input ngbButton type="radio" value="3"> Winrate
+      </label>
+      <label ngbButtonLabel class="btn-secondary btn">
+        <input ngbButton type="radio" [value]="4"> Kills
+      </label>
+      <label ngbButtonLabel class="btn-secondary btn">
+        <input ngbButton type="radio" [value]="5"> Planes Killed
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col" id="members" *ngIf="clanData.members && memberStats">
+    <table class="table">
+      <tr>
+        <th>Rank</th>
+        <th>Account-ID</th>
+        <th class="text-right">Battles</th>
+        <th class="text-right">PvP</th>
+        <th class="text-right">PvP Solo</th>
+        <th class="text-right">PvP Div2</th>
+        <th class="text-right">PvP Div3</th>
+        <th class="text-right">PvE</th>
+        <th class="text-right">Club</th>
+        <th class="text-right">Rank Solo</th>
+        <th>#</th>
+      </tr>
+      <tr *ngFor="let memberStat of memberStats.member_stats; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{getMemberInfo(memberStat.account_id).account_name}}</td>
+        <td class="text-right">{{ (memberStat.battles).toLocaleString() }}</td>
+        <td class="text-right">{{getFieldValue('pvp', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('pvp_solo', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('pvp_div2', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('pvp_div3', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('pve', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('club', memberStat)}}</td>
+        <td class="text-right">{{getFieldValue('rank_solo', memberStat)}}</td>
+        <td>
+          <a [routerLink]="['/player/', memberStat.account_id]">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,22 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HelperService } from './share/helper.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './body/search/search.component';
-import { MemberDetailComponent } from './body/clan-detail/member-detail/member-detail.component';
-import { PlayerDetailComponent } from './body/player-detail/player-detail.component';
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
-import { ClanRanksComponent } from './body/clan-detail/clan-ranks/clan-ranks.component';
+import { MemberDetailComponent } from './body/clan-detail/member-detail/member-detail.component';
+import { MemberListComponent } from './body/clan-detail/member-list/member-list.component';
+import { MemberStatsComponent } from './body/clan-detail/member-stats/member-stats.component';
+import { PlayerDetailComponent } from './body/player-detail/player-detail.component';
 import { ClansListComponent } from './body/search/clans-list/clans-list.component';
 import { PlayersListComponent } from './body/search/players-list/players-list.component';
-import { AppRoutingModule } from './app-routing.module';
-import { SearchService } from './share/search.service';
+import { SearchComponent } from './body/search/search.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { ConfigService } from './share/config.service';
+import { SearchService } from './share/search.service';
+
 
 @NgModule({
   declarations: [
@@ -24,21 +26,23 @@ import { ConfigService } from './share/config.service';
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    MemberDetailComponent,
     PlayerDetailComponent,
     ClanDetailComponent,
-    ClanRanksComponent,
+    MemberDetailComponent,
+    MemberStatsComponent,
     SearchComponent,
     ClansListComponent,
     PlayersListComponent,
+    MemberListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
-  providers: [ConfigService, SearchService],
+  providers: [ConfigService, SearchService, HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

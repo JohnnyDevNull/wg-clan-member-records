@@ -1,9 +1,9 @@
-import { ActivatedRoute, Params } from '@angular/router';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { WgBaseResultModel } from './../../share/wg-base-result.model';
-import { ClanService } from './../../share/clan.service';
 import { ClanModel } from './clan.model';
+import { ClanService } from './clan.service';
 import { MemberModel } from './member.model';
 
 @Component({
@@ -20,6 +20,7 @@ export class ClanDetailComponent implements OnInit, OnDestroy {
   public clanData: ClanModel;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private clanService: ClanService) { }
 
   ngOnInit() {
@@ -37,6 +38,8 @@ export class ClanDetailComponent implements OnInit, OnDestroy {
           this.clanData = <ClanModel>this.resultData.data[this.clanId];
           const members: MemberModel[] = <Array<MemberModel>>Object.values(this.resultData.data[this.clanId].members);
           this.clanData.members = members;
+          this.clanService.setClanData(this.clanData);
+          this.router.navigate(['member-list'], { relativeTo: this.route});
         }
       ));
     }
