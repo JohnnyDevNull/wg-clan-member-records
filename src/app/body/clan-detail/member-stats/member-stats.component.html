@@ -25,9 +25,22 @@
 <div class="row">
   <div class="col" id="members" *ngIf="clanData.members && memberStats">
     <table class="table">
+      <colgroup>
+        <col style="width: 60px">
+        <col>
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 120px">
+        <col style="width: 40px">
+      </colgroup>
       <tr>
-        <th>Rank</th>
-        <th>Account-ID</th>
+        <th class="text-right">Rank</th>
+        <th class="text-left">Name</th>
         <th class="text-right">Battles</th>
         <th class="text-right">PvP</th>
         <th class="text-right">PvP Solo</th>
@@ -39,8 +52,8 @@
         <th>#</th>
       </tr>
       <tr *ngFor="let memberStat of memberStats.member_stats; let i = index">
-        <td>{{ i + 1 }}</td>
-        <td>{{getMemberInfo(memberStat.account_id).account_name}}</td>
+        <td class="text-right">{{ i + 1 }}</td>
+        <td class="text-left">{{getMemberInfo(memberStat.account_id).account_name}}</td>
         <td class="text-right">{{ memberStat.battles | number:'0.0-2' }}</td>
         <td class="text-right">{{ getFieldValue('pvp', memberStat) | number:'0.0-2' }}</td>
         <td class="text-right">{{ getFieldValue('pvp_solo', memberStat) | number:'0.0-2' }}</td>
