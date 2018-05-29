@@ -5,6 +5,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { WgBaseResultModel } from './../../share/wg-base-result.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-player-detail',
@@ -21,9 +22,11 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private playerService: PlayerService,
-              private detailService: PlayerDetailService) { }
+              private detailService: PlayerDetailService,
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.playerId = this.route.snapshot.params['id'];
     this.subs.push(this.route.params.subscribe(
       (params: Params) => {
@@ -37,6 +40,7 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
           this.resultData = data;
           this.playerData = <Player>this.resultData.data[this.playerId];
           this.detailService.setPlayerData(this.playerData);
+          this.spinner.hide();
           console.log(this.playerData);
         }
       ));

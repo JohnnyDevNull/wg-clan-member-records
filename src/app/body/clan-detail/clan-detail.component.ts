@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { WgBaseResultModel } from './../../share/wg-base-result.model';
 import { ClanModel } from './clan.model';
@@ -21,9 +22,11 @@ export class ClanDetailComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private clanService: ClanService) { }
+              private clanService: ClanService,
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.clanId = this.route.snapshot.params['id'];
     this.subs.push(this.route.params.subscribe(
       (params: Params) => {
@@ -40,6 +43,7 @@ export class ClanDetailComponent implements OnInit, OnDestroy {
           this.clanData.members = members;
           this.clanService.setClanData(this.clanData);
           this.router.navigate(['member-list'], { relativeTo: this.route});
+          this.spinner.hide();
         }
       ));
     }

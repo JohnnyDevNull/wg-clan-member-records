@@ -3,6 +3,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClanDetailComponent } from './body/clan-detail/clan-detail.component';
@@ -43,7 +44,8 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [ConfigService, SearchService, { provide: LOCALE_ID, useValue: 'de-DE' }],
   bootstrap: [AppComponent]

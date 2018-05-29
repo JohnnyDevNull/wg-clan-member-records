@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ClanModel } from '../clan.model';
@@ -23,14 +24,17 @@ export class MemberStatsComponent implements OnInit {
   public memberStats: MemberStats;
   private subs: Subscription;
 
-  constructor(private clanService: ClanService) { }
+  constructor(private clanService: ClanService,
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.clanData = this.clanService.getClanData();
     this.subs = this.clanService.getMemberStats().subscribe(
       (memberStats: MemberStats) => {
         this.memberStats = memberStats;
         console.log(this.memberStats);
+        this.spinner.hide();
       }
     );
   }
