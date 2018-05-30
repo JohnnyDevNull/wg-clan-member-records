@@ -21,6 +21,29 @@
       </label>
     </div>
   </div>
+  <div class="col">
+    <form class="form-inline nav-battle-sort pull-right">
+      <label class="my-1 mr-2">Sortieren nach: </label>
+      <select class="custom-select"
+              name="sort"
+              [(ngModel)]="sortValue">
+        <option value="battles" selected>Battles</option>
+        <option value="pvp">PvP</option>
+        <option value="pvp_solo">PvP Solo</option>
+        <option value="pvp_div2">PvP Div2</option>
+        <option value="pvp_div3">PvP Div3</option>
+        <option value="pve">PvE</option>
+        <option value="club">Club</option>
+        <option value="rank_solo">Rank Solo</option>
+      </select>
+      <select class="custom-select"
+              name="sortDir"
+              [(ngModel)]="sortDirection">
+        <option value="desc" selected>DESC</option>
+        <option value="asc">ASC</option>
+      </select>
+    </form>
+  </div>
 </div>
 <div class="row">
   <div class="col" id="members" *ngIf="clanData.members && memberStats">
@@ -51,7 +74,7 @@
         <th class="text-right">Rank Solo</th>
         <th>#</th>
       </tr>
-      <tr *ngFor="let memberStat of memberStats.member_stats; let i = index">
+      <tr *ngFor="let memberStat of memberStats.member_stats | msort:battleTypeNumToString(battleType):sortValue:sortDirection; let i = index">
         <td class="text-right">{{ i + 1 }}</td>
         <td class="text-left">{{getMemberInfo(memberStat.account_id).account_name}}</td>
         <td class="text-right">{{ memberStat.battles | number:'0.0-2' }}</td>

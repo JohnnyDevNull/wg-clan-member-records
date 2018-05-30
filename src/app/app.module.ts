@@ -22,6 +22,7 @@ import { SearchService } from './share/search.service';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
+import { MemberSortPipe } from './body/clan-detail/member-stats/member-sort.pipe';
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
@@ -38,6 +39,7 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     ClansListComponent,
     PlayersListComponent,
     MemberListComponent,
+    MemberSortPipe
   ],
   imports: [
     BrowserModule,

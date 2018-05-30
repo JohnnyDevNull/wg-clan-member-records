@@ -1,5 +1,5 @@
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { ClanModel } from '../clan.model';
 import { ClanService } from '../clan.service';
@@ -16,13 +16,15 @@ const PLANES = 5;
 @Component({
   selector: 'app-member-stats',
   templateUrl: './member-stats.component.html',
-  styleUrls: []
 })
 export class MemberStatsComponent implements OnInit {
   public battleType = 1;
   public clanData: ClanModel = null;
   public memberStats: MemberStats;
   private subs: Subscription;
+
+  public sortValue = 'battles';
+  public sortDirection = 'desc';
 
   constructor(private clanService: ClanService,
               private spinner: NgxSpinnerService) { }
@@ -56,11 +58,30 @@ export class MemberStatsComponent implements OnInit {
       case MAXDMG:
         return memberStat[type].max_damage_dealt;
       case WINRATE:
-        return (memberStat[type].wins / memberStat[type].battles) * 100;
+        return +memberStat[type].battles > 0
+          ? (+memberStat[type].wins / +memberStat[type].battles) * 100
+          : 0;
       case KILLS:
         return memberStat[type].frags;
       case PLANES:
         return memberStat[type].planes_killed;
+      default:
+        return 0;
+    }
+  }
+
+  battleTypeNumToString(battleTypeNum: number) {
+    switch (+battleTypeNum) {
+      case BATTLES:
+        return 'battles';
+      case MAXDMG:
+        return 'max_damage_dealt';
+      case WINRATE:
+        return 'winrate';
+      case KILLS:
+        return 'frags';
+      case PLANES:
+        return 'planes_killed';
       default:
         return 0;
     }
