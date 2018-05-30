@@ -35,7 +35,6 @@ export class MemberStatsComponent implements OnInit {
     this.subs = this.clanService.getMemberStats().subscribe(
       (memberStats: MemberStats) => {
         this.memberStats = memberStats;
-        console.log(this.memberStats);
         this.spinner.hide();
       }
     );

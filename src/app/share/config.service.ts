@@ -1,5 +1,11 @@
+import { environment } from './../../environments/environment';
+
 export class ConfigService {
-  private apiBaseUrl = 'http://localhost:8080/';
+  public apiBaseUrl: string;
+
+  constructor() {
+    this.apiBaseUrl = environment.baseApiUrl;
+  }
 
   public getApiBaseUrl(): string {
     return this.apiBaseUrl;

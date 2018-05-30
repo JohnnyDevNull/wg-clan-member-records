@@ -41,7 +41,6 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
           this.playerData = <Player>this.resultData.data[this.playerId];
           this.detailService.setPlayerData(this.playerData);
           this.spinner.hide();
-          console.log(this.playerData);
         }
       ));
     }
