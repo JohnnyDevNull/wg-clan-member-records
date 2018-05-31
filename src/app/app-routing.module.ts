@@ -1,3 +1,4 @@
+import { PrivacyPolicyComponent } from './body/privacy-policy/privacy-policy.component';
 import { MemberListComponent } from './body/clan-detail/member-list/member-list.component';
 import { ClansListComponent } from './body/search/clans-list/clans-list.component';
 import { PlayersListComponent } from './body/search/players-list/players-list.component';
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     { path: 'member-stats', component: MemberStatsComponent },
     { path: 'members/:id', component: MemberDetailComponent },
   ] },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 ];
 
 @NgModule({
