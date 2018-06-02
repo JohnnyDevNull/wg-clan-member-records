@@ -5,19 +5,19 @@
          name="radioBasic"
          [(ngModel)]="battleType">
       <label ngbButtonLabel class="btn-secondary btn">
-        <input ngbButton type="radio" [value]="1"> Battles
+        <input ngbButton type="radio" [value]="1"> Gefechte
       </label>
       <label ngbButtonLabel class="btn-secondary btn">
-        <input ngbButton type="radio" [value]="2"> Max Damage
+        <input ngbButton type="radio" [value]="2"> Max Schaden
       </label>
       <label ngbButtonLabel class="btn-secondary btn">
-        <input ngbButton type="radio" value="3"> Winrate
+        <input ngbButton type="radio" value="3"> Siegrate
       </label>
       <label ngbButtonLabel class="btn-secondary btn">
-        <input ngbButton type="radio" [value]="4"> Kills
+        <input ngbButton type="radio" [value]="4"> Schiffe versenkt
       </label>
       <label ngbButtonLabel class="btn-secondary btn">
-        <input ngbButton type="radio" [value]="5"> Planes Killed
+        <input ngbButton type="radio" [value]="5"> Flugzeuge abgeschossen
       </label>
     </div>
   </div>
@@ -27,7 +27,7 @@
       <select class="custom-select"
               name="sort"
               [(ngModel)]="sortValue">
-        <option value="battles" selected>Battles</option>
+        <option value="battles" selected>Gefechte</option>
         <option value="pvp">PvP</option>
         <option value="pvp_solo">PvP Solo</option>
         <option value="pvp_div2">PvP Div2</option>
@@ -64,7 +64,7 @@
       <tr>
         <th class="text-right">Rank</th>
         <th class="text-left">Name</th>
-        <th class="text-right">Battles</th>
+        <th class="text-right">Gefechte</th>
         <th class="text-right">PvP</th>
         <th class="text-right">PvP Solo</th>
         <th class="text-right">PvP Div2</th>
