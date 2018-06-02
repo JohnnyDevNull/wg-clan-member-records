@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivacyPolicyComponent implements OnInit {
 
-  constructor() { }
+  private subs: Subscription;
+  public pHtmlStr;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.subs = this.http.get(
+      'static/privacy-policy.html',
+      {responseType: 'text'}
+    ).subscribe(
+      (content: string) => {
+        this.pHtmlStr = content;
+      }
+    );
   }
 
 }
