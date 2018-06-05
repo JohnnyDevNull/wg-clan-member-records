@@ -14,13 +14,13 @@
   <div class="col">
     <h4>Schaden Durschn.</h4>
     <table class="table">
-      <tr><th>PVE:</th><td class="text-right">{{ getDamageAvg('pve') | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP:</th><td class="text-right">{{ getDamageAvg('pvp') | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Div2:</th><td class="text-right">{{ getDamageAvg('pvp_div2') | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Div3:</th><td class="text-right">{{ getDamageAvg('pvp_div3') | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Solo:</th><td class="text-right">{{ getDamageAvg('pvp_solo') | number:'0.0-0' }}</td></tr>
-      <tr><th>Rank Solo:</th><td class="text-right">{{ getDamageAvg('rank_solo') | number:'0.0-0' }}</td></tr>
-      <tr><th>Club:</th><td class="text-right">{{ getDamageAvg('club') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVE:</th><td class="text-right">{{ getAvg('pve', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP:</th><td class="text-right">{{ getAvg('pvp', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div2:</th><td class="text-right">{{ getAvg('pvp_div2', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div3:</th><td class="text-right">{{ getAvg('pvp_div3', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Solo:</th><td class="text-right">{{ getAvg('pvp_solo', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>Rank Solo:</th><td class="text-right">{{ getAvg('rank_solo', 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>Club:</th><td class="text-right">{{ getAvg('club', 'damage') | number:'0.0-0' }}</td></tr>
     </table>
   </div>
   <div class="col">

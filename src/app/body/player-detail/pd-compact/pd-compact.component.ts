@@ -13,8 +13,17 @@ export class PdCompactComponent {
     return this.detailService.getWinRate(type);
   }
 
-  getDamageAvg(type: string) {
-    return this.detailService.getDamageAvg(type);
+  getAvg(type: string, key: string) {
+    switch (key) {
+      case 'xp':
+        return this.detailService.getXpAvg(type);
+      case 'damage':
+        return this.detailService.getDamageAvg(type);
+      case 'frags':
+        return this.detailService.getFragsAvg(type);
+      case 'planes':
+        return this.detailService.getPlanesAvg(type);
+    }
   }
 
   getFieldValue(type: string, key: string) {

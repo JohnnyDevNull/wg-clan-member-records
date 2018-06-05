@@ -30,10 +30,10 @@
   <div class="col">
     <h4>Durchschnitt je Gefecht</h4>
     <table class="table">
-      <tr><th>Erfahrung</th><td class="text-right"></td></tr>
-      <tr><th>Schaden verursacht</th><td class="text-right"></td></tr>
-      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right"></td></tr>
-      <tr><th>Flugzeuge abgeschossen</th><td class="text-right"></td></tr>
+      <tr><th>Erfahrung</th><td class="text-right">{{ getAvg(selectedMode, 'xp') | number:'0.0-0' }}</td></tr>
+      <tr><th>Schaden verursacht</th><td class="text-right">{{ getAvg(selectedMode, 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right">{{ getAvg(selectedMode, 'frags') | number:'0.0-2' }}</td></tr>
+      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ getAvg(selectedMode, 'planes') | number:'0.0-2' }}</td></tr>
     </table>
   </div>
   <div class="col">
