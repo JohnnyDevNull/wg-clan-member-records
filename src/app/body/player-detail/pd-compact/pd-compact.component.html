@@ -26,13 +26,13 @@
   <div class="col">
     <h4>Schaden Max.</h4>
     <table class="table">
-      <tr><th>PVE:</th><td class="text-right">{{ (playerData.statistics.pve.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP:</th><td class="text-right">{{ (playerData.statistics.pvp.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Div2:</th><td class="text-right">{{ (playerData.statistics.pvp_div2.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Div3:</th><td class="text-right">{{ (playerData.statistics.pvp_div3.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>PVP Solo:</th><td class="text-right">{{ (playerData.statistics.pvp_solo.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>Rank Solo:</th><td class="text-right">{{ (playerData.statistics.rank_solo.max_damage_dealt) | number:'0.0-0' }}</td></tr>
-      <tr><th>Club:</th><td class="text-right">{{ (playerData.statistics.club.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVE:</th><td class="text-right">{{ (getFieldValue('pve', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP:</th><td class="text-right">{{ (getFieldValue('pvp', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div2:</th><td class="text-right">{{ (getFieldValue('pvp_div2', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div3:</th><td class="text-right">{{ (getFieldValue('pvp_div3', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Solo:</th><td class="text-right">{{ (getFieldValue('pvp_solo', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>Rank Solo:</th><td class="text-right">{{ (getFieldValue('rank_solo', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
+      <tr><th>Club:</th><td class="text-right">{{ (getFieldValue('club', 'max_damage_dealt')) | number:'0.0-0' }}</td></tr>
     </table>
   </div>
 </div>

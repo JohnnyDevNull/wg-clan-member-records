@@ -20,4 +20,9 @@ export class PlayerDetailService {
     }
     return this.playerData.statistics[type].damage_dealt / this.playerData.statistics[type].battles;
   }
+
+  public getFieldValue(type: string, key: string) {
+    const stats = this.playerData.statistics[type];
+    return stats[key];
+  }
 }

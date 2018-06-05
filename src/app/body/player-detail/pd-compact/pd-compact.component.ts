@@ -1,6 +1,5 @@
+import { Component } from '@angular/core';
 import { PlayerDetailService } from './../player-detail.service';
-import { Player } from './../player.model';
-import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pd-compact',
@@ -8,9 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class PdCompactComponent {
 
-  @Input() public playerData: Player;
-
-  constructor(private detailService: PlayerDetailService) { }
+  constructor(protected detailService: PlayerDetailService) { }
 
   getWinRate(type: string) {
     return this.detailService.getWinRate(type);
@@ -18,5 +15,9 @@ export class PdCompactComponent {
 
   getDamageAvg(type: string) {
     return this.detailService.getDamageAvg(type);
+  }
+
+  getFieldValue(type: string, key: string) {
+    return this.detailService.getFieldValue(type, key);
   }
 }

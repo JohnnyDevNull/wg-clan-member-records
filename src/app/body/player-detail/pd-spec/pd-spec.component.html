@@ -19,7 +19,7 @@
     <h4>Gesamtergebnisse</h4> 
     <table class="table">
       <tr><th>Gefechte</th><td class="text-right">{{ +getFieldValue('battles') | number }}</td></tr>
-      <tr><th>Siege</th><td class="text-right">{{ +getFieldValue('wins') | number }}</td></tr>
+      <tr><th>Siege</th><td class="text-right">{{ +getFieldValue('wins') | number }} <small>({{ getWinRate(selectedMode) | number:'0.0-2' }} %)</small></td></tr>
       <tr><th>Überlebte Gefechte</th><td class="text-right">{{ +getFieldValue('survived_battles') | number }}</td></tr>
       <tr><th>Genauigkeit</th><td class="text-right"></td></tr>
       <tr><th>Schaden verursacht</th><td class="text-right">{{ +getFieldValue('damage_dealt') | number }}</td></tr>

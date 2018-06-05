@@ -1,6 +1,5 @@
+import { Component } from '@angular/core';
 import { PdCompactComponent } from './../pd-compact/pd-compact.component';
-import { Player } from './../player.model';
-import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pd-spec',
@@ -21,7 +20,6 @@ export class PdSpecComponent extends PdCompactComponent {
   ];
 
   getFieldValue(key: string) {
-    const stats = this.playerData.statistics[this.selectedMode];
-    return stats[key];
+    return this.detailService.getFieldValue(this.selectedMode, key);
   }
 }
