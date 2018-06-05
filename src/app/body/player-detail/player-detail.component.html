@@ -10,10 +10,14 @@
         Account-ID: {{ playerId }}, 
         erstellt am: {{ playerData.created_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}, 
         zuletzt aktualisiert: {{ playerData.updated_at * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}
+        <br>
+        Level: {{ +playerData.leveling_tier }}, 
+        Karma: {{ +playerData.karma }}, 
+        letztes Gefecht: {{ playerData.last_battle_time * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}
       </small>
     </div>
   </div>
-  <div id="playerStats" class="row">
+  <div id="playerStats" class="row" *ngIf="!playerData.hidden_profile; else hiddenProfile">
     <div class="col">
       <h4>Siegrate</h4>
       <table class="table">
@@ -51,6 +55,11 @@
       </table>
     </div>
   </div>
+  <ng-template #hiddenProfile>
+    <div class="row">
+      <div class="col"><h4>Der Spieler möchte seine Statistik nicht teilen.</h4></div>
+    </div>
+  </ng-template>
 </div>
 <ngx-spinner
   bdColor="rgba(51,51,51,0.8)"

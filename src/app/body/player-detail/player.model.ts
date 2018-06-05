@@ -6,6 +6,7 @@ export class Player {
   public hidden_profile: boolean;
   public karma: number;
   public last_battle_time: number;
+  public leveling_tier: number;
   public leveling_points: number;
   public logout_at: number;
   public nickname: string;
