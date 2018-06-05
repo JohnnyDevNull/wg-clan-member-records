@@ -1,0 +1,56 @@
+<div class="row mb-2">
+  <div class="col">
+    <div class="btn-group btn-group-toggle"
+         ngbRadioGroup
+         name="detailModeSwitch"
+         [(ngModel)]="selectedMode">
+      <label ngbButtonLabel
+             class="btn-secondary btn-sm"
+             *ngFor="let gameMode of gameModes">
+        <input ngbButton
+               type="radio"
+               [value]="gameMode.key"> {{gameMode.name}}
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col">
+    <h4>Gesamtergebnisse</h4> 
+    <table class="table">
+      <tr><th>Gefechte</th><td class="text-right">{{ +getFieldValue('battles') | number }}</td></tr>
+      <tr><th>Siege</th><td class="text-right">{{ +getFieldValue('wins') | number }}</td></tr>
+      <tr><th>Überlebte Gefechte</th><td class="text-right">{{ +getFieldValue('survived_battles') | number }}</td></tr>
+      <tr><th>Genauigkeit</th><td class="text-right"></td></tr>
+      <tr><th>Schaden verursacht</th><td class="text-right">{{ +getFieldValue('damage_dealt') | number }}</td></tr>
+      <tr><th>Zerstörte Kriegsschiffe</th><td class="text-right">{{ +getFieldValue('frags') | number }}</td></tr>
+      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ +getFieldValue('planes_killed') | number }}</td></tr>
+    </table>
+  </div>
+  <div class="col">
+    <h4>Durchschnitt je Gefecht</h4>
+    <table class="table">
+      <tr><th>Erfahrung</th><td class="text-right"></td></tr>
+      <tr><th>Schaden verursacht</th><td class="text-right"></td></tr>
+      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right"></td></tr>
+      <tr><th>Flugzeuge abgeschossen</th><td class="text-right"></td></tr>
+    </table>
+  </div>
+  <div class="col">
+    <h4>Persönliche Rekorde</h4>
+    <table class="table">
+      <tr><th>Erfahrung</th><td class="text-right">{{ +getFieldValue('max_xp') | number }}</td></tr>
+      <tr><th>Schaden verursacht</th><td class="text-right">{{ +getFieldValue('max_damage_dealt') | number }}</td></tr>
+      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right">{{ +getFieldValue('max_frags_battle') | number }}</td></tr>
+      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ +getFieldValue('max_planes_killed') | number }}</td></tr>
+    </table>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col">Col1</div>
+  <div class="col">Col2</div>
+  <div class="col">Col3</div>
+</div>
+<div class="row">
+  <div class="col">Col1</div>
+</div>

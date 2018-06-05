@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col">
+    <h4>Siegrate</h4>
+    <table class="table">
+      <tr><th>PVE:</th><td class="text-right">{{ getWinRate('pve') | number:'0.0-2' }}</td></tr>
+      <tr><th>PVP:</th><td class="text-right">{{ getWinRate('pvp') | number:'0.0-2' }}</td></tr>
+      <tr><th>PVP Div2:</th><td class="text-right">{{ getWinRate('pvp_div2') | number:'0.0-2' }}</td></tr>
+      <tr><th>PVP Div3:</th><td class="text-right">{{ getWinRate('pvp_div3') | number:'0.0-2' }}</td></tr>
+      <tr><th>PVP Solo:</th><td class="text-right">{{ getWinRate('pvp_solo') | number:'0.0-2' }}</td></tr>
+      <tr><th>Rank Solo:</th><td class="text-right">{{ getWinRate('rank_solo') | number:'0.0-2' }}</td></tr>
+      <tr><th>Club:</th><td class="text-right">{{ getWinRate('club') | number:'0.0-2' }}</td></tr>
+    </table>
+  </div>
+  <div class="col">
+    <h4>Schaden Durschn.</h4>
+    <table class="table">
+      <tr><th>PVE:</th><td class="text-right">{{ getDamageAvg('pve') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP:</th><td class="text-right">{{ getDamageAvg('pvp') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div2:</th><td class="text-right">{{ getDamageAvg('pvp_div2') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div3:</th><td class="text-right">{{ getDamageAvg('pvp_div3') | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Solo:</th><td class="text-right">{{ getDamageAvg('pvp_solo') | number:'0.0-0' }}</td></tr>
+      <tr><th>Rank Solo:</th><td class="text-right">{{ getDamageAvg('rank_solo') | number:'0.0-0' }}</td></tr>
+      <tr><th>Club:</th><td class="text-right">{{ getDamageAvg('club') | number:'0.0-0' }}</td></tr>
+    </table>
+  </div>
+  <div class="col">
+    <h4>Schaden Max.</h4>
+    <table class="table">
+      <tr><th>PVE:</th><td class="text-right">{{ (playerData.statistics.pve.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP:</th><td class="text-right">{{ (playerData.statistics.pvp.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div2:</th><td class="text-right">{{ (playerData.statistics.pvp_div2.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Div3:</th><td class="text-right">{{ (playerData.statistics.pvp_div3.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>PVP Solo:</th><td class="text-right">{{ (playerData.statistics.pvp_solo.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>Rank Solo:</th><td class="text-right">{{ (playerData.statistics.rank_solo.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+      <tr><th>Club:</th><td class="text-right">{{ (playerData.statistics.club.max_damage_dealt) | number:'0.0-0' }}</td></tr>
+    </table>
+  </div>
+</div>

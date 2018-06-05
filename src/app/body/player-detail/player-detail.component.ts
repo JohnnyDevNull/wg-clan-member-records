@@ -19,6 +19,7 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
   public playerId: number;
   public resultData: WgBaseResultModel;
   public playerData: Player;
+  public viewMode = 'compact';
 
   constructor(private route: ActivatedRoute,
               private playerService: PlayerService,
@@ -50,13 +51,5 @@ export class PlayerDetailComponent implements OnInit, OnDestroy {
     for (let sub of this.subs) {
       sub.unsubscribe();
     }
-  }
-
-  getWinRate(type: string) {
-    return this.detailService.getWinRate(type);
-  }
-
-  getDamageAvg(type: string) {
-    return this.detailService.getDamageAvg(type);
   }
 }

@@ -24,6 +24,8 @@ import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
 import { MemberSortPipe } from './body/clan-detail/member-stats/member-sort.pipe';
 import { PrivacyPolicyComponent } from './body/privacy-policy/privacy-policy.component';
+import { PdCompactComponent } from './body/player-detail/pd-compact/pd-compact.component';
+import { PdSpecComponent } from './body/player-detail/pd-spec/pd-spec.component';
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
@@ -41,7 +43,9 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     PlayersListComponent,
     MemberListComponent,
     MemberSortPipe,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    PdCompactComponent,
+    PdSpecComponent
   ],
   imports: [
     BrowserModule,
