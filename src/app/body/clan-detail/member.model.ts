@@ -1,6 +1,6 @@
-export class MemberModel {
-  public account_id: number;
-  public account_name: string;
-  public joined_at: number;
-  public role: string;
+export interface MemberModel {
+  account_id: number;
+  account_name: string;
+  joined_at: number;
+  role: string;
 }

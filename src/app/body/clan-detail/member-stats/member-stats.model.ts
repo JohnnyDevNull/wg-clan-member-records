@@ -1,6 +1,6 @@
 import { MemberStat } from './member-stat.model';
 
-export class MemberStats {
+export interface MemberStats {
   clan_id: number;
   member_stats: MemberStat[];
 }
