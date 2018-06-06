@@ -16,33 +16,51 @@
 </div>
 <div class="row mb-2">
   <div class="col">
-    <h4>Gesamtergebnisse</h4> 
+    <h5>Gesamtergebnisse</h5> 
     <table class="table">
-      <tr><th>Gefechte</th><td class="text-right">{{ +getFieldValue('battles') | number }}</td></tr>
-      <tr><th>Siege</th><td class="text-right">{{ +getFieldValue('wins') | number }} <small>({{ getWinRate(selectedMode) | number:'0.0-2' }} %)</small></td></tr>
-      <tr><th>Überlebte Gefechte</th><td class="text-right">{{ +getFieldValue('survived_battles') | number }}</td></tr>
-      <tr><th>Genauigkeit</th><td class="text-right">{{ getHitRatioOverall(selectedMode) | number:'0.0-2' }}</td></tr>
-      <tr><th>Schaden verursacht</th><td class="text-right">{{ +getFieldValue('damage_dealt') | number }}</td></tr>
-      <tr><th>Zerstörte Kriegsschiffe</th><td class="text-right">{{ +getFieldValue('frags') | number }}</td></tr>
-      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ +getFieldValue('planes_killed') | number }}</td></tr>
+      <tr><td>Gefechte</td><td class="text-right">{{ +getFieldValue('battles') | number }}</td></tr>
+      <tr><td>Siege</td><td class="text-right">{{ +getFieldValue('wins') | number }} <small>({{ getWinRate(selectedMode) | number:'0.0-2' }} %)</small></td></tr>
+      <tr><td>Überlebte Gefechte</td><td class="text-right">{{ +getFieldValue('survived_battles') | number }}</td></tr>
+      <tr><td>Überlebte Siege</td><td class="text-right">{{ +getFieldValue('survived_wins') | number }}</td></tr>
+      <tr><td>Genauigkeit</td><td class="text-right">{{ getHitRatioOverall(selectedMode) | number:'0.0-2' }}</td></tr>
+      <tr><td>Schaden verursacht</td><td class="text-right">{{ +getFieldValue('damage_dealt') | number }}</td></tr>
+      <tr><td>Zerstörte Kriegsschiffe</td><td class="text-right">{{ +getFieldValue('frags') | number }}</td></tr>
+      <tr><td>Flugzeuge abgeschossen</td><td class="text-right">{{ +getFieldValue('planes_killed') | number }}</td></tr>
+      <tr><td>gefahrener Meilen</td><td class="text-right">{{ +getMainFieldValue('distance') | number }}</td></tr>
     </table>
   </div>
   <div class="col">
-    <h4>Durchschnitt je Gefecht</h4>
+    <h5>Persönliche Rekorde</h5>
     <table class="table">
-      <tr><th>Erfahrung</th><td class="text-right">{{ getAvg(selectedMode, 'xp') | number:'0.0-0' }}</td></tr>
-      <tr><th>Schaden verursacht</th><td class="text-right">{{ getAvg(selectedMode, 'damage') | number:'0.0-0' }}</td></tr>
-      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right">{{ getAvg(selectedMode, 'frags') | number:'0.0-2' }}</td></tr>
-      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ getAvg(selectedMode, 'planes') | number:'0.0-2' }}</td></tr>
+      <tr><td>Erfahrung</td><td class="text-right">{{ +getFieldValue('max_xp') | number }}</td></tr>
+      <tr><td>Schaden verursacht</td><td class="text-right">{{ +getFieldValue('max_damage_dealt') | number }}</td></tr>
+      <tr><td>Zertörte Kriegsschiffe</td><td class="text-right">{{ +getFieldValue('max_frags_battle') | number }}</td></tr>
+      <tr><td>Flugzeuge abgeschossen</td><td class="text-right">{{ +getFieldValue('max_planes_killed') | number }}</td></tr>
+    </table>
+    <h5>Durchschnitt je Gefecht</h5>
+    <table class="table">
+      <tr><td>Erfahrung</td><td class="text-right">{{ getAvg(selectedMode, 'xp') | number:'0.0-0' }}</td></tr>
+      <tr><td>Schaden verursacht</td><td class="text-right">{{ getAvg(selectedMode, 'damage') | number:'0.0-0' }}</td></tr>
+      <tr><td>Zertörte Kriegsschiffe</td><td class="text-right">{{ getAvg(selectedMode, 'frags') | number:'0.0-2' }}</td></tr>
+      <tr><td>Flugzeuge abgeschossen</td><td class="text-right">{{ getAvg(selectedMode, 'planes') | number:'0.0-2' }}</td></tr>
     </table>
   </div>
   <div class="col">
-    <h4>Persönliche Rekorde</h4>
+    <h5>Kriegsschiffe versenkt</h5>
     <table class="table">
-      <tr><th>Erfahrung</th><td class="text-right">{{ +getFieldValue('max_xp') | number }}</td></tr>
-      <tr><th>Schaden verursacht</th><td class="text-right">{{ +getFieldValue('max_damage_dealt') | number }}</td></tr>
-      <tr><th>Zertörte Kriegsschiffe</th><td class="text-right">{{ +getFieldValue('max_frags_battle') | number }}</td></tr>
-      <tr><th>Flugzeuge abgeschossen</th><td class="text-right">{{ +getFieldValue('max_planes_killed') | number }}</td></tr>
+      <tr><td>Hauptbatterie</td><td class="text-right">{{ getFieldValue('main_battery').frags }}</td></tr>
+      <tr><td>Torpedos</td><td class="text-right">{{ getFieldValue('torpedoes').frags }}</td></tr>
+      <tr><td>Sekundärbatterie</td><td class="text-right">{{ getFieldValue('second_battery').frags }}</td></tr>
+      <tr><td>Flugzeuge</td><td class="text-right">{{ getFieldValue('aircraft').frags }}</td></tr>
+      <tr><td>Rammen</td><td class="text-right">{{ getFieldValue('ramming').frags }}</td></tr>
+    </table>
+    <h5>Kriegsschiffe versenkt (max. i.e. Gefecht)</h5>
+    <table class="table">
+      <tr><td>Hauptbatterie</td><td class="text-right">{{ getFieldValue('main_battery').max_frags_battle }}</td></tr>
+      <tr><td>Torpedos</td><td class="text-right">{{ getFieldValue('torpedoes').max_frags_battle }}</td></tr>
+      <tr><td>Sekundärbatterie</td><td class="text-right">{{ getFieldValue('second_battery').max_frags_battle }}</td></tr>
+      <tr><td>Flugzeuge</td><td class="text-right">{{ getFieldValue('aircraft').max_frags_battle }}</td></tr>
+      <tr><td>Rammen</td><td class="text-right">{{ getFieldValue('ramming').max_frags_battle }}</td></tr>
     </table>
   </div>
 </div>
@@ -50,7 +68,4 @@
   <div class="col">Col1</div>
   <div class="col">Col2</div>
   <div class="col">Col3</div>
-</div>
-<div class="row">
-  <div class="col">Col1</div>
 </div>

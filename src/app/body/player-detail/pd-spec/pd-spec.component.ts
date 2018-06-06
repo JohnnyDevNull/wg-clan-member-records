@@ -22,4 +22,8 @@ export class PdSpecComponent extends PdCompactComponent {
   getFieldValue(key: string) {
     return this.detailService.getFieldValue(this.selectedMode, key);
   }
+
+  getMainFieldValue(key: string) {
+    return this.detailService.getMainFieldValue(key);
+  }
 }

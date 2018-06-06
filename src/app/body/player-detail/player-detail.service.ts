@@ -43,8 +43,12 @@ export class PlayerDetailService {
   }
 
   public getFieldValue(type: string, key: string) {
-    const stats = this.playerData.statistics[type];
+    const stats = this.getMainFieldValue(type);
     return stats[key];
+  }
+
+  public getMainFieldValue(key: string) {
+    return this.playerData.statistics[key];
   }
 
   public getHitRatioOverall(type: string) {
