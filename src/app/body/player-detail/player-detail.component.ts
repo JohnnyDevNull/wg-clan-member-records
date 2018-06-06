@@ -1,11 +1,11 @@
-import { PlayerDetailService } from './player-detail.service';
-import { Player } from './player.model';
-import { PlayerService } from './../../share/player.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { WgBaseResultModel } from './../../share/wg-base-result.model';
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Subscription } from 'rxjs';
+import { Player } from '../../share/model/player.model';
+import { WgBaseResultModel } from '../../share/model/wg-base-result.model';
+import { PlayerService } from './../../share/player.service';
+import { PlayerDetailService } from './player-detail.service';
 
 @Component({
   selector: 'app-player-detail',

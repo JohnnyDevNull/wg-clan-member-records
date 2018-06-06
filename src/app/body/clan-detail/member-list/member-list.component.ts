@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ClanModel } from './../clan.model';
+import { ClanModel } from '../../../share/model/clan.model';
 import { ClanService } from './../clan.service';
 
 @Component({

@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
-import { WgBaseResultModel } from './../../share/wg-base-result.model';
-import { ClanModel } from './clan.model';
+import { ClanModel } from '../../share/model/clan.model';
+import { MemberModel } from '../../share/model/member.model';
+import { WgBaseResultModel } from '../../share/model/wg-base-result.model';
 import { ClanService } from './clan.service';
-import { MemberModel } from './member.model';
 
 @Component({
   selector: 'app-clan-detail',

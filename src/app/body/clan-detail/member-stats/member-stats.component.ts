@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
-import { ClanModel } from '../clan.model';
+import { ClanModel } from '../../../share/model/clan.model';
+import { MemberStat } from '../../../share/model/member-stat.model';
+import { MemberStats } from '../../../share/model/member-stats.model';
+import { MemberModel } from '../../../share/model/member.model';
 import { ClanService } from '../clan.service';
-import { MemberModel } from './../member.model';
-import { MemberStat } from './member-stat.model';
-import { MemberStats } from './member-stats.model';
 
 const BATTLES = 1;
 const MAXDMG = 2;
@@ -46,8 +46,6 @@ export class MemberStatsComponent implements OnInit {
         return member;
       }
     }
-
-    return new MemberModel();
   }
 
   getFieldValue(type: string, memberStat: MemberStat) {

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { SearchService } from './../../../share/search.service';
-import { WgBaseResultModel } from './../../../share/wg-base-result.model';
+import { WgBaseResultModel } from './../../../share/model/wg-base-result.model';
 
 @Component({
   selector: 'app-players',

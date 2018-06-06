@@ -1,4 +1,4 @@
-import { WgBaseResultModel } from './wg-base-result.model';
+import { WgBaseResultModel } from './model/wg-base-result.model';
 import { ConfigService } from './config.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';

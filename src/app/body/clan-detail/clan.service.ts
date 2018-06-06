@@ -1,9 +1,8 @@
-import { MemberStats } from './member-stats/member-stats.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigService } from '../../share/config.service';
-import { ClanModel } from './clan.model';
+import { ClanModel } from '../../share/model/clan.model';
 
 @Injectable()
 export class ClanService {

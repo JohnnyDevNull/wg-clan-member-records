@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Data, Router } from '@angular/router';
 import { Subscription, Subject } from 'rxjs';
 
-import { WgBaseResultModel } from './../../share/wg-base-result.model';
+import { WgBaseResultModel } from './../../share/model/wg-base-result.model';
 import { SearchService } from '../../share/search.service';
 
 @Component({

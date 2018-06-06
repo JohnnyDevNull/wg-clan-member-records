@@ -1,4 +1,4 @@
-import { Player } from './player.model';
+import { Player } from '../../share/model/player.model';
 
 export class PlayerDetailService {
   private playerData: Player;
