@@ -1,4 +1,4 @@
-export class StatisticsModel {
+export interface StatisticsModel {
   battles: number;
   distance: number;
   stats_updated_at: number;
@@ -15,6 +15,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   pve: {
     battles: number,
@@ -28,6 +50,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   pvp: {
     battles: number,
@@ -41,6 +85,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   pvp_div2: {
     battles: number,
@@ -54,6 +120,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   pvp_div3: {
     battles: number,
@@ -67,6 +155,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   pvp_solo: {
     battles: number,
@@ -80,6 +190,28 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
   rank_solo: {
     battles: number,
@@ -93,5 +225,27 @@ export class StatisticsModel {
     max_frags_battle: number,
     max_xp: number,
     xp: number,
+    survived_battles: number,
+    main_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    second_battery: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
+    torpedoes: {
+      max_frags_battle: number,
+      frags: number,
+      hits: number,
+      max_frags_ship_id: number,
+      shots: number
+    },
   };
 }

@@ -46,4 +46,22 @@ export class PlayerDetailService {
     const stats = this.playerData.statistics[type];
     return stats[key];
   }
+
+  public getHitRatioOverall(type: string) {
+    if (+this.playerData.statistics[type].battles === 0) {
+      return 0;
+    }
+
+    let hits = 0;
+    hits += this.playerData.statistics[type].main_battery.hits;
+    hits += this.playerData.statistics[type].second_battery.hits;
+    hits += this.playerData.statistics[type].torpedoes.hits;
+
+    let shots = 0;
+    shots += this.playerData.statistics[type].main_battery.shots;
+    shots += this.playerData.statistics[type].second_battery.shots;
+    shots += this.playerData.statistics[type].torpedoes.shots;
+
+    return ((hits / shots) * 100);
+  }
 }

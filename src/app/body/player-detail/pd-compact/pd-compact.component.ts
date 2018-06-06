@@ -29,4 +29,8 @@ export class PdCompactComponent {
   getFieldValue(type: string, key: string) {
     return this.detailService.getFieldValue(type, key);
   }
+
+  getHitRatioOverall(type: string) {
+    return this.detailService.getHitRatioOverall(type);
+  }
 }
