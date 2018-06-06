@@ -22,12 +22,16 @@
         <label ngbButtonLabel class="btn-secondary btn-sm">
           <input ngbButton type="radio" value="detail"> Detail
         </label>
+        <label ngbButtonLabel class="btn-secondary btn-sm">
+          <input ngbButton type="radio" value="ships"> Schiffe
+        </label>
       </div>
     </div>
   </div>
   <div id="playerStats" *ngIf="!playerData.hidden_profile; else hiddenProfile">
     <app-pd-compact *ngIf="viewMode == 'compact'"></app-pd-compact>
     <app-pd-spec *ngIf="viewMode == 'detail'"></app-pd-spec>
+    <app-pd-ships *ngIf="viewMode == 'ships'"></app-pd-ships>
   </div>
   <ng-template #hiddenProfile>
     <div class="row">

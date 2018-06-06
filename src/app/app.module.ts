@@ -26,6 +26,7 @@ import { MemberSortPipe } from './body/clan-detail/member-stats/member-sort.pipe
 import { PrivacyPolicyComponent } from './body/privacy-policy/privacy-policy.component';
 import { PdCompactComponent } from './body/player-detail/pd-compact/pd-compact.component';
 import { PdSpecComponent } from './body/player-detail/pd-spec/pd-spec.component';
+import { PdShipsComponent } from './body/player-detail/pd-ships/pd-ships.component';
 registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
@@ -45,7 +46,8 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     MemberSortPipe,
     PrivacyPolicyComponent,
     PdCompactComponent,
-    PdSpecComponent
+    PdSpecComponent,
+    PdShipsComponent
   ],
   imports: [
     BrowserModule,
