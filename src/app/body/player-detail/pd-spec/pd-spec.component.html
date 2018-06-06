@@ -22,11 +22,11 @@
       <tr><td>Siege</td><td class="text-right">{{ +getFieldValue('wins') | number }} <small>({{ getWinRate(selectedMode) | number:'0.0-2' }} %)</small></td></tr>
       <tr><td>Überlebte Gefechte</td><td class="text-right">{{ +getFieldValue('survived_battles') | number }}</td></tr>
       <tr><td>Überlebte Siege</td><td class="text-right">{{ +getFieldValue('survived_wins') | number }}</td></tr>
-      <tr><td>Genauigkeit</td><td class="text-right">{{ getHitRatioOverall(selectedMode) | number:'0.0-2' }}</td></tr>
+      <tr><td>Genauigkeit</td><td class="text-right">{{ getHitRatioOverall(selectedMode) | number:'0.0-2' }} %</td></tr>
       <tr><td>Schaden verursacht</td><td class="text-right">{{ +getFieldValue('damage_dealt') | number }}</td></tr>
       <tr><td>Zerstörte Kriegsschiffe</td><td class="text-right">{{ +getFieldValue('frags') | number }}</td></tr>
       <tr><td>Flugzeuge abgeschossen</td><td class="text-right">{{ +getFieldValue('planes_killed') | number }}</td></tr>
-      <tr><td>gefahrener Meilen</td><td class="text-right">{{ +getMainFieldValue('distance') | number }}</td></tr>
+      <tr><td>Gefahrener Meilen</td><td class="text-right">{{ +getMainFieldValue('distance') | number }}</td></tr>
     </table>
   </div>
   <div class="col">
@@ -63,9 +63,4 @@
       <tr><td>Rammen</td><td class="text-right">{{ getFieldValue('ramming').max_frags_battle }}</td></tr>
     </table>
   </div>
-</div>
-<div class="row mb-2">
-  <div class="col">Col1</div>
-  <div class="col">Col2</div>
-  <div class="col">Col3</div>
 </div>

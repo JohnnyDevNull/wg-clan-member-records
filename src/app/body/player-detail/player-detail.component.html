@@ -15,9 +15,11 @@
         Karma: {{ +playerData.karma }}, 
         letztes Gefecht: {{ playerData.last_battle_time * 1000 | date: 'dd.MM.yyyy hh:mm:ss' }}
       </small>
+    </div>
+    <div class="col pt-2">
       <div class="btn-group btn-group-toggle pull-right" ngbRadioGroup name="viewModeSwitch" [(ngModel)]="viewMode">
         <label ngbButtonLabel class="btn-secondary btn-sm">
-          <input ngbButton type="radio" value="compact"> Compact
+          <input ngbButton type="radio" value="compact"> Kompakt
         </label>
         <label ngbButtonLabel class="btn-secondary btn-sm">
           <input ngbButton type="radio" value="detail"> Detail
