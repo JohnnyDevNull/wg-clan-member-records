@@ -19,4 +19,7 @@ export class PlayerService {
     return this.http.get(this.apiBaseUrl + 'players/' + accountId + '/info');
   }
 
+  public getPlayerProgress(accountId) {
+    return this.http.get(this.apiBaseUrl + 'players/' + accountId + '/progress');
+  }
 }
