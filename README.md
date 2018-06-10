@@ -1,6 +1,7 @@
 # WowsClanMemberRecords
 
 The corresponding api project: [wg-clan-member-api](https://github.com/JohnnyDevNull/wg-clan-member-api)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
